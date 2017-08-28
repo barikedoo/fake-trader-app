@@ -12,7 +12,7 @@
           <v-text-field label="Quantity" type="number" v-model="quantity" min="0"></v-text-field>
         </v-flex>
 
-        <v-flex xs3 offset-xs5 class="mt-3">
+        <v-flex xs3 offset-lg3 offset-md2  class="mt-3">
           <v-btn round class="green" @click="buyStock" :disabled="quantity <=0 || !isInteger(quantity) || quantity == ''">Buy</v-btn>
         </v-flex>
         

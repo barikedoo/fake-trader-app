@@ -7,7 +7,7 @@
 
       <v-snackbar :timeout="2000" top v-model="snackbar">
         {{ text }}
-        <v-btn flat class="green--text lighten-2" @click.native="snackbar = false">Збс</v-btn>
+        <v-btn flat class="green--text lighten-2" @click.native="snackbar = false">Cool</v-btn>
       </v-snackbar>
 
       
@@ -27,13 +27,6 @@ export default {
 
   data() {
     return {
-      stocks: [
-        { id: 1, name: 'BMW', price: 100 },
-        { id: 1, name: 'Google', price: 130 },
-        { id: 1, name: 'Yandex', price: 80 },
-        { id: 1, name: 'Facebook', price: 110 },
-        { id: 1, name: 'Yahoo', price: 70 },
-      ],
       snackbar: false,
       text: ''
     }
@@ -42,6 +35,11 @@ export default {
       purchaseAlert(message) {
         this.text = message;
         this.snackbar = true;
+      }
+    },
+    computed: {
+      stocks() {
+        return this.$store.getters.stocks;
       }
     }
 }

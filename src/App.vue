@@ -27,6 +27,10 @@ export default {
   components: {
     'app-header': Header
   },
+  created() {
+    this.$store.dispatch('initStocks');
+    console.log(this.$store.getters.stocks);
+  },
 
   data() {
     return {
